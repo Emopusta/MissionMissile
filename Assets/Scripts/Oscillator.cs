@@ -25,8 +25,7 @@ public class Oscillator : MonoBehaviour
         {
             float cycles = Time.time / period; // continually increases time
             float rawSinWave = Mathf.Sin(cycles * tau); // going from -1 to 1
-            Debug.Log(cycles);
-            Debug.Log(rawSinWave);
+
             movementFactor = (rawSinWave * +1f) / 2f;// -1,1 to 0,2  and then when u divide it to 2 its [0,1]
 
             Vector3 offset = movementVector * movementFactor;
