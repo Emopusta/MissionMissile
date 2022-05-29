@@ -8,17 +8,17 @@ public class CollisionHandler : MonoBehaviour
     
     [SerializeField] ParticleSystem crashParticles;
     [SerializeField] ParticleSystem successParticles;
+    
 
-    Rigidbody rb;
     AudioSource audioS;
 
-    int starCounter = 0;
+
     bool isTransitioning = false;
     bool collisionDisabled = false;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+
         audioS = GetComponent<AudioSource>();
 
     }
@@ -56,14 +56,9 @@ public class CollisionHandler : MonoBehaviour
                     break;
                 case "Finish":
                     StartLandingSequence();
-                    Debug.Log(starCounter);
                     break;
                 case "Fuel":
                     Debug.Log("added fuel.");
-                    break;
-                case "Star":
-                    IncreaseStarCounter();
-                    Destroy(collision.gameObject);
                     break;
                 default:
                     if (!collisionDisabled)
@@ -88,7 +83,7 @@ public class CollisionHandler : MonoBehaviour
     }
     void StartCrashSequence()
     {
-        rb.freezeRotation = false;
+
         crashParticles.Play(); // play the crash particles
         isTransitioning = true;
         StartCrashAudio();
@@ -121,11 +116,6 @@ public class CollisionHandler : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex); 
-    }
-    void IncreaseStarCounter()
-    {
-        starCounter++;
-        Debug.Log(starCounter);
     }
    
 }

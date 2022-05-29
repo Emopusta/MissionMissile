@@ -128,7 +128,7 @@ public class Movement : MonoBehaviour
     {
         rb.freezeRotation = true; // freezing rotation so we can manually rotate
         transform.Rotate(Vector3.forward * rotationWay * Time.deltaTime);
-        //rb.freezeRotation = false; // unfreezing rotation so the physics system can't take over
-        
+        rb.freezeRotation = false; // unfreezing rotation so the physics system can't take over
+       
     }
 }
