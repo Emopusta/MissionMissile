@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.010501458, y: 0.9404768}
   m_AnchorMax: {x: 0.19250147, y: 1}
-  m_AnchoredPosition: {x: 4.0932617, y: -8.800507}
+  m_AnchoredPosition: {x: 4.093292, y: -8.800507}
   m_SizeDelta: {x: 14.1866, y: 11.601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &15469414
@@ -878,7 +878,10 @@ Transform:
   m_LocalRotation: {x: 0.005409515, y: 0.00478768, z: -0.00010587732, w: -0.9999739}
   m_LocalPosition: {x: 19.9101, y: -7.048784, z: 29.413572}
   m_LocalScale: {x: 1, y: 1, z: 1}
+<<<<<<< HEAD
   m_ConstrainProportionsScale: 0
+=======
+>>>>>>> oyun/harun
   m_Children: []
   m_Father: {fileID: 954377510}
   m_RootOrder: 0
@@ -896,7 +899,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
+<<<<<<< HEAD
   m_FollowOffset: {x: 0, y: 1.432, z: -9.98}
+=======
+  m_FollowOffset: {x: 0, y: 1.4319999, z: -9.98}
+>>>>>>> oyun/harun
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1395,7 +1402,11 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
+<<<<<<< HEAD
   m_LookAt: {fileID: 1661832949}
+=======
+  m_LookAt: {fileID: 0}
+>>>>>>> oyun/harun
   m_Follow: {fileID: 1661832949}
   m_Lens:
     FieldOfView: 67.134674
@@ -1403,10 +1414,14 @@ MonoBehaviour:
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
+<<<<<<< HEAD
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
     m_SensorSize: {x: 0.8840125, y: 1}
+=======
+    LensShift: {x: 0, y: 0}
+>>>>>>> oyun/harun
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1422,10 +1437,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954377508}
+<<<<<<< HEAD
   m_LocalRotation: {x: 0.07119683, y: -1e-45, z: -0, w: 0.9974623}
   m_LocalPosition: {x: -34.94, y: 2.29, z: -9.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+=======
+  m_LocalRotation: {x: -0.005409515, y: -0.00478768, z: 0.00010587732, w: -0.9999739}
+  m_LocalPosition: {x: -34.94, y: 2.29, z: -9.98}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+>>>>>>> oyun/harun
   m_Children:
   - {fileID: 673383721}
   m_Father: {fileID: 0}
@@ -1508,13 +1529,21 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
+<<<<<<< HEAD
   m_LocalRotation: {x: 0.07119683, y: -1e-45, z: 0, w: 0.9974623}
+=======
+  m_LocalRotation: {x: -0.005409515, y: -0.00478768, z: 0.00010587732, w: -0.9999739}
+>>>>>>> oyun/harun
   m_LocalPosition: {x: -34.94, y: 2.29, z: -9.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 3
+=======
+  m_RootOrder: 2
+>>>>>>> oyun/harun
   m_LocalEulerAnglesHint: {x: 17.273, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
