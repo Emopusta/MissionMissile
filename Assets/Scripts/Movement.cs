@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float mainThrust = 1000f;
     [SerializeField] AudioClip mainEngine;
     [SerializeField] float rotateThrust = 80f;
+    [SerializeField] double fuel = 100;
 
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem leftSideEngineParticles;
@@ -16,8 +17,18 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     AudioSource audioS;
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Fuel")
+        {
+            fuel += 200;
+        }
+        other.gameObject.SetActive(false);
+        other.GetComponent<MeshRenderer>().enabled = false;
+        other.GetComponent<SphereCollider>().enabled = false;
+    }
     float degree;
+    
 
     void Start()
     {
@@ -49,9 +60,10 @@ public class Movement : MonoBehaviour
     {
         //ThrusterAudio();
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && fuel>0)
         {
             StartThrusting();
+            fuel = fuel - 0.1;
         }
         else
         {
@@ -85,17 +97,19 @@ public class Movement : MonoBehaviour
         {
             //audioS.Play();
             audioS.PlayOneShot(mainEngine);
-
+            
         }
         if (!mainEngineParticles.isPlaying)
         {
             mainEngineParticles.Play();
+            
         }
     }
     void StopThrusting()
     {
         audioS.Stop();
         mainEngineParticles.Stop();
+        Debug.Log(fuel);
     }
     
 

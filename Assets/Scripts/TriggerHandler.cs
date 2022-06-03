@@ -14,7 +14,8 @@ public class TriggerHandler : CollisionHandler
                 starCounter++;
                 DisappearStar(other);
                 break;
-
+            case "Fuel":
+                break;
             default:
                 Debug.Log("do nothing");
                 break;
