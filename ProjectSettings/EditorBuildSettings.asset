@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: 328879756f5311d47823e9d302e5862b
   - enabled: 1
-    path: Assets/Scenes/Fly Over.unity
-    guid: db9b44e6b03268f448263eb40055a8b9
-  - enabled: 1
     path: Assets/Scenes/Fly Under.unity
     guid: 46cd01f8f074473419ae712aa274d9c6
   - enabled: 1
@@ -23,13 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fly Parkour 2.unity
     guid: 6d12f4ad0a307054e8016198af0d36b7
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/Harun b\xF6l\xFCm 1.unity"
     guid: a842e48c25d1bc64aa1818e980cb21d4
   - enabled: 1
     path: "Assets/Scenes/Harun b\xF6l\xFCm 2.unity"
     guid: 55b6dfcf2727a33408b1e5f3494501da
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/Harun b\xF6l\xFCm 3.unity"
     guid: 4842d0672813e8b498970b9e72690f62
   - enabled: 1
@@ -47,6 +44,15 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Harun b\xF6l\xFCm 7.unity"
     guid: b4ce929458977b34294bb3d8e01eaafe
+  - enabled: 1
+    path: Assets/Scenes/talha 2.unity
+    guid: 1c90a683695000443ac94ad1b56fd05a
+  - enabled: 1
+    path: Assets/Scenes/talha 3.unity
+    guid: 3c7fda7f2d632b14a9329165f16de3b7
+  - enabled: 1
+    path: Assets/Scenes/talha 4.unity
+    guid: b84eb568d15b1d346aa9ac15366a9807
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: ffb75d2957453d04196e5b2258ff7a79

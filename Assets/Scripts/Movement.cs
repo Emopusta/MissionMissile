@@ -118,7 +118,7 @@ public class Movement : MonoBehaviour
     {
         audioS.Stop();
         mainEngineParticles.Stop();
-        Debug.Log(fuel);
+        
     }
     
 
