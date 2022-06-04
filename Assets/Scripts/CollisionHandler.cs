@@ -111,6 +111,7 @@ public class CollisionHandler : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
         int totalNumberOfLevels = SceneManager.sceneCountInBuildSettings;
+        starCounter = 0;
         if (nextSceneIndex == totalNumberOfLevels)
         {
             nextSceneIndex = 0;

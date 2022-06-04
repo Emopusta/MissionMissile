@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] float mainThrust = 1000f;
     [SerializeField] AudioClip mainEngine;
     [SerializeField] float rotateThrust = 80f;
-    [SerializeField] double fuel = 100;
+    [SerializeField] int fuelDecreaseLevel = 1;
+    [SerializeField] FuelBar fb;
+    [SerializeField] int addFuelAmount = 1000;
 
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem leftSideEngineParticles;
@@ -16,12 +19,13 @@ public class Movement : MonoBehaviour
 
     Rigidbody rb;
     AudioSource audioS;
+    int fuel = 10000;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Fuel")
         {
-            fuel += 200;
+            fuel += addFuelAmount;
         }
         other.gameObject.SetActive(false);
         other.GetComponent<MeshRenderer>().enabled = false;
@@ -35,6 +39,7 @@ public class Movement : MonoBehaviour
         rb= GetComponent<Rigidbody>();
         audioS = GetComponent<AudioSource>();
         audioS.Stop();
+       
     }
 
     // Update is called once per frame
@@ -42,7 +47,10 @@ public class Movement : MonoBehaviour
     {
         ProcessThrust();
         ProcessRotation();
+        fb.SetFuel(fuel);
+        
     }
+    
     void ThrusterAudio()
     {
         if (Input.GetKeyDown(KeyCode.W) && audioS.isPlaying != true)
@@ -63,7 +71,8 @@ public class Movement : MonoBehaviour
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && fuel>0)
         {
             StartThrusting();
-            fuel = fuel - 0.1;
+            fuel = fuel - fuelDecreaseLevel;
+            
         }
         else
         {
@@ -145,4 +154,5 @@ public class Movement : MonoBehaviour
         rb.freezeRotation = false; // unfreezing rotation so the physics system can't take over -- to do : set this in collisionhandler
        
     }
+
 }
