@@ -17,7 +17,7 @@ public class CollisionHandler : MonoBehaviour
     bool isTransitioning = false;
     bool collisionDisabled = false;
     public int starCounter = 0;
-    public int totalStarCounter = 0;
+    
     void Start()
     {
 
