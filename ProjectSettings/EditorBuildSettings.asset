@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: 328879756f5311d47823e9d302e5862b
   - enabled: 1
+    path: Assets/Scenes/Fly Over.unity
+    guid: db9b44e6b03268f448263eb40055a8b9
+  - enabled: 1
     path: Assets/Scenes/Fly Under.unity
     guid: 46cd01f8f074473419ae712aa274d9c6
   - enabled: 1

@@ -13,8 +13,8 @@ public class Movement : MonoBehaviour
     [SerializeField] int addFuelAmount = 1000;
 
     [SerializeField] ParticleSystem mainEngineParticles;
-    [SerializeField] ParticleSystem leftSideEngineParticles;
-    [SerializeField] ParticleSystem rightSideEngineParticles;
+    //[SerializeField] ParticleSystem leftSideEngineParticles;
+    //[SerializeField] ParticleSystem rightSideEngineParticles;
 
 
     Rigidbody rb;
@@ -123,26 +123,26 @@ public class Movement : MonoBehaviour
     void StartRotatingRight()
     {
         ApplyRotation(-rotateThrust);
-        if (!rightSideEngineParticles.isPlaying)
-        {
-            rightSideEngineParticles.Play();
-        }
+        //if (!rightSideEngineParticles.isPlaying)
+        //{
+        //    rightSideEngineParticles.Play();
+        //}
     }
 
     void StartRotatingLeft()
     {
         //rb.MoveRotation(Quaternion.Euler(0, 0, degree += rotateThrust));
         ApplyRotation(rotateThrust);
-        if (!leftSideEngineParticles.isPlaying)
-        {
-            leftSideEngineParticles.Play();
-        }
+        //if (!leftSideEngineParticles.isPlaying)
+        //{
+        //    leftSideEngineParticles.Play();
+        //}
     }
 
     void StopRotating()
     {
-        rightSideEngineParticles.Stop();
-        leftSideEngineParticles.Stop();
+        //rightSideEngineParticles.Stop();
+        //leftSideEngineParticles.Stop();
     }
 
     void ApplyRotation(float rotationWay)

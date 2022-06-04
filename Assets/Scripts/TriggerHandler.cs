@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class TriggerHandler : CollisionHandler
+public class TriggerHandler : MonoBehaviour
 {
-   
+    [SerializeField] CollisionHandler ch;
     private void OnTriggerEnter(Collider other)
     {
         switch (other.gameObject.tag)
         {
             case "Star":
                 Debug.Log("Star");
-                starCounter++;
+                ch.starCounter++;
                 DisappearStar(other);
                 break;
             
