@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] float mainThrust = 1000f;
     [SerializeField] AudioClip mainEngine;
     [SerializeField] float rotateThrust = 80f;
+    [SerializeField] int fuelDecreaseLevel = 1;
+    [SerializeField] FuelBar fb;
+    [SerializeField] int addFuelAmount = 1000;
 
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem leftSideEngineParticles;
@@ -15,15 +19,27 @@ public class Movement : MonoBehaviour
 
     Rigidbody rb;
     AudioSource audioS;
+    int fuel = 10000;
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Fuel")
+        {
+            fuel += addFuelAmount;
+        }
+        other.gameObject.SetActive(false);
+        other.GetComponent<MeshRenderer>().enabled = false;
+        other.GetComponent<SphereCollider>().enabled = false;
+    }
     float degree;
+    
 
     void Start()
     {
         rb= GetComponent<Rigidbody>();
         audioS = GetComponent<AudioSource>();
         audioS.Stop();
+       
     }
 
     // Update is called once per frame
@@ -31,7 +47,10 @@ public class Movement : MonoBehaviour
     {
         ProcessThrust();
         ProcessRotation();
+        fb.SetFuel(fuel);
+        
     }
+    
     void ThrusterAudio()
     {
         if (Input.GetKeyDown(KeyCode.W) && audioS.isPlaying != true)
@@ -49,9 +68,11 @@ public class Movement : MonoBehaviour
     {
         //ThrusterAudio();
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && fuel>0)
         {
             StartThrusting();
+            fuel = fuel - fuelDecreaseLevel;
+            
         }
         else
         {
@@ -85,17 +106,19 @@ public class Movement : MonoBehaviour
         {
             //audioS.Play();
             audioS.PlayOneShot(mainEngine);
-
+            
         }
         if (!mainEngineParticles.isPlaying)
         {
             mainEngineParticles.Play();
+            
         }
     }
     void StopThrusting()
     {
         audioS.Stop();
         mainEngineParticles.Stop();
+        Debug.Log(fuel);
     }
     
 
@@ -128,7 +151,8 @@ public class Movement : MonoBehaviour
     {
         rb.freezeRotation = true; // freezing rotation so we can manually rotate
         transform.Rotate(Vector3.forward * rotationWay * Time.deltaTime);
-        rb.freezeRotation = false; // unfreezing rotation so the physics system can't take over
+        rb.freezeRotation = false; // unfreezing rotation so the physics system can't take over -- to do : set this in collisionhandler
        
     }
+
 }

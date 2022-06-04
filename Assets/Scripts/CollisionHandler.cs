@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
+    
     [SerializeField] float levelLoadDelay = 2f;
     [SerializeField] AudioClip crashAudio;
     [SerializeField] AudioClip successAudio;
@@ -15,7 +16,7 @@ public class CollisionHandler : MonoBehaviour
 
     bool isTransitioning = false;
     bool collisionDisabled = false;
-
+    public int starCounter = 0;
     void Start()
     {
 
@@ -55,6 +56,7 @@ public class CollisionHandler : MonoBehaviour
                 case "Friendly":
                     break;
                 case "Finish":
+                    Debug.Log("Collected Stars: " + starCounter);
                     StartLandingSequence();
                     break;
                 case "Fuel":
@@ -70,6 +72,10 @@ public class CollisionHandler : MonoBehaviour
 
             }
         }
+    }
+    void VanishStar()
+    {
+
     }
     void StartCrashAudio() // todo fix the audio for proper timing
     {
@@ -105,6 +111,7 @@ public class CollisionHandler : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
         int totalNumberOfLevels = SceneManager.sceneCountInBuildSettings;
+        starCounter = 0;
         if (nextSceneIndex == totalNumberOfLevels)
         {
             nextSceneIndex = 0;
