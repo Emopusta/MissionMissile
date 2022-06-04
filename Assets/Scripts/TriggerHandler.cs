@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TriggerHandler : CollisionHandler
 {
    
@@ -14,8 +15,7 @@ public class TriggerHandler : CollisionHandler
                 starCounter++;
                 DisappearStar(other);
                 break;
-            case "Fuel":
-                break;
+            
             default:
                 Debug.Log("do nothing");
                 break;
