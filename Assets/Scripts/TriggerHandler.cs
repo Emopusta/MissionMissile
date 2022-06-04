@@ -24,8 +24,9 @@ public class TriggerHandler : CollisionHandler
 
     void DisappearStar(Collider other)
     {
-        other.gameObject.SetActive(false);
+        Destroy(other.gameObject);
+        /*other.gameObject.SetActive(false);
         other.GetComponent<MeshRenderer>().enabled = false;
-        other.GetComponent<SphereCollider>().enabled = false;
+        other.GetComponent<SphereCollider>().enabled = false;*/
     }
 }

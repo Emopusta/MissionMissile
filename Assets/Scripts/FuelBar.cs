@@ -9,7 +9,7 @@ public class FuelBar : MonoBehaviour
     public void SetFuel(int fuel)
     {
         slider.value = (float)fuel/10000;
-        Debug.Log(slider.value);
+        
     }
     
 }

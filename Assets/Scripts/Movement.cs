@@ -27,9 +27,7 @@ public class Movement : MonoBehaviour
         {
             fuel += addFuelAmount;
         }
-        other.gameObject.SetActive(false);
-        other.GetComponent<MeshRenderer>().enabled = false;
-        other.GetComponent<SphereCollider>().enabled = false;
+        Destroy(other.gameObject);
     }
     float degree;
     
