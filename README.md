@@ -9,7 +9,7 @@
   
 ## Keys
 
-- `W` or `space` Active the thruster. (go up)
+- `W` or `space` Activate the thruster. (go up)
 - `A` , `D` Rotate the Rocket.
 - `R` Restart level.
 - `L` Jump to the next level (cheat)
